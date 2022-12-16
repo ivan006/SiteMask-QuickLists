@@ -224,7 +224,10 @@ ob_end_clean();
 $xpath = new DOMXPath($html);
 $nodelist = $xpath->query($copiedxpath);
 
-foreach ($nodelist as $n) {
-    echo $n->nodeValue . "\n";
-}
+// foreach ($nodelist as $n) {
+//     echo $n->nodeValue . "\n";
+// }
+
+$htmlString = $html->saveHTML($nodelist->item(0));
+echo $htmlString;
 ?>
