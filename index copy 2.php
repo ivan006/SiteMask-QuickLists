@@ -8,11 +8,20 @@ $thing_link = "https://capetownhikingspots.pory.app" . $actual_link;
 // echo $thing_link;
 
 if($actual_link !== "/sitemap.xml"){
-    
     echo file_get_contents($thing_link);
     
     if("old"=="!old"){
-        echo str_replace("</body></html>","",file_get_contents($thing_link));
+
+           
+
+          
+        if("old"=="!old"){
+            echo str_replace("</body></html>","",file_get_contents($thing_link));
+        }
+        if("old2"=="!old2"){
+            ?><!DOCTYPE html><html lang="en"><head><?php
+        }
+      
     
         ?>
         
@@ -25,9 +34,22 @@ if($actual_link !== "/sitemap.xml"){
     
       gtag('config', 'G-STFQ7D6PF9');
     </script>
-    </body></html>
+    
+    <?php
+        if("old"=="!old"){
+            ?></body></html><?php
+        }
+        if("old2"=="!old2"){
+            echo str_replace('<!DOCTYPE html><html lang="en"><head>',"",file_get_contents($thing_link)); 
+        }
+        
+
+     
+    ?>
         <?php
     }
+
+
 } else {
     echo str_replace("https://capetownhikingspots.pory.app",$prefix,file_get_contents($thing_link));
     
