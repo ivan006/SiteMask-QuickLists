@@ -8,8 +8,9 @@ $thing_link = "https://capetownhikingspots.pory.app" . $actual_link;
 // echo $thing_link;
 
 if($actual_link !== "/sitemap.xml"){
-    echo file_get_contents($thing_link);
-    
+    $html =  file_get_contents($thing_link);
+    echo $html;
+    file_put_contents("test.txt",$thing_link.",".$html);
     if("old"=="!old"){
 
            
